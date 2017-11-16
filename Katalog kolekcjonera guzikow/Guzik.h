@@ -10,7 +10,6 @@ enum Material
 	miedz,
 	drewno,
 	szklo,
-	material,
 	skora,
 	modelina
 };

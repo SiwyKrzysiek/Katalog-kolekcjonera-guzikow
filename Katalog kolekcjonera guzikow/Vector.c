@@ -1,6 +1,5 @@
 #include "Vector.h"
 
-
 void zainicjalizuj(struct Vector *vector)
 {
     vector->cappcity=1;
@@ -24,3 +23,5 @@ void delete(struct Vector *vector, int index)
     memmove(vector->tab+index, vector->tab+index+1, (vector->size-index-1)*sizeof(struct Guzik));
     vector->size--;
 }
+
+
