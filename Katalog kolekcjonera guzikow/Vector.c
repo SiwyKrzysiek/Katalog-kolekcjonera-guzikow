@@ -1,5 +1,6 @@
 #include "Vector.h"
 
+
 void zainicjalizuj(struct Vector *vector)
 {
     vector->cappcity=1;
