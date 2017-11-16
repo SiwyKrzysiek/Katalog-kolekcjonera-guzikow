@@ -5,6 +5,7 @@
 
 int main()
 {
-
+    puts("Slolo");
+    
 	return 0;
 }
