@@ -26,5 +26,6 @@ struct Guzik
 };
 
 const char *materialToString(enum Material material);
+char *guzikToString(char nazwa[], struct Guzik guzik);
 
 #endif /* GUZIK */
