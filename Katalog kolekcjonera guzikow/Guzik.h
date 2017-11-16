@@ -2,6 +2,7 @@
 #define GUZIK
 
 #include "Data.h"
+#include <stdio.h>
 
 enum Material
 {
@@ -16,12 +17,14 @@ enum Material
 
 struct Guzik
 {
-	char nazwa[30];
+	char nazwa[20];
 	int rozmiar; //W mm
 	enum Material material;
 	double cena;
 	struct Data data;
 	int rokProdukcji;
 };
+
+const char *materialToString(enum Material material);
 
 #endif /* GUZIK */

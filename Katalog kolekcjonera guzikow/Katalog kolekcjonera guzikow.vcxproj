@@ -111,6 +111,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Data.c" />
+    <ClCompile Include="Guzik.c" />
     <ClCompile Include="main.c">
       <SubType>
       </SubType>
