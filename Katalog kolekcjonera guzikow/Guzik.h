@@ -1,6 +1,8 @@
 #ifndef GUZIK
 #define GUZIK
 
+#include "Data.h"
+
 enum Material
 {
 	zlto,
