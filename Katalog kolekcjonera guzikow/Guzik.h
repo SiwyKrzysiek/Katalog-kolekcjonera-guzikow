@@ -3,7 +3,7 @@
 
 enum Material
 {
-	z³oto,
+	zlto,
 	srebro,
 	miedz,
 	drewno,
