@@ -11,7 +11,7 @@ struct Data
 		rok;
 };
 
-char *dataToString(char slowo[], struct Data data);
+char *dataToString(char slowo[11], struct Data data);
 
 #endif /* DATA */
 

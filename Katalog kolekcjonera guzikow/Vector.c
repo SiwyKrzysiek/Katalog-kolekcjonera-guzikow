@@ -41,9 +41,11 @@ void wypisz(struct Vector *vector)
 {
 	char bufor[100];
 	char nagluwek[] = "ID   Nazwa                Rozmiar   Material   Cena      Data zakupu   Rok produkcji";
+	puts(nagluwek);
+	puts("------------------------------------------------------------------------------------");
 
 	for (int i = 0; i < vector->size; i++)
 	{
-		printf("%4d %s\n", i + 1, guzikToString(bufor, vector->tab[i]));
+		printf("%-4d %s\n", i + 1, guzikToString(bufor, vector->tab[i]));
 	}
 }
