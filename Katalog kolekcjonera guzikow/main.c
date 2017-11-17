@@ -16,12 +16,14 @@ int main()
 	push_back(&tab, b);
 
 	wypisz(&tab);
-    
 
-    
-	//printf("%-20s%10s%10s%10s%10s%10s", "abcdefghi", "abcdefghi", "abcdefghi", "abcdefghi", "abcdefghi", "abcdefghi");
+	delete(&tab, 0);
+	wypisz(&tab);
+
+	clear(&tab);
+	wypisz(&tab);
 
 	
-    
+	cleanupAtExit(&tab);
 	return 0;
 }

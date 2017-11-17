@@ -37,6 +37,22 @@ void delete(struct Vector *vector, int index)
     vector->size--;
 }
 
+void clear(struct Vector *vector)
+{
+	free(vector->tab);
+	zainicjalizuj(vector);
+}
+
+void cleanupAtExit(struct Vector *vector)
+{
+	free(vector->tab);
+}
+
+void replace(struct Vector *vector, int index, struct Guzik nowy)
+{
+	vector->tab[index] = nowy;
+}
+
 void wypisz(struct Vector *vector)
 {
 	char bufor[100];
@@ -48,4 +64,5 @@ void wypisz(struct Vector *vector)
 	{
 		printf("%-4d %s\n", i + 1, guzikToString(bufor, vector->tab[i]));
 	}
+	putchar('\n');
 }

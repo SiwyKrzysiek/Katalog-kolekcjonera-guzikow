@@ -113,6 +113,7 @@
   <ItemGroup>
     <ClCompile Include="Data.c" />
     <ClCompile Include="Guzik.c" />
+    <ClCompile Include="Interfejs.c" />
     <ClCompile Include="main.c">
       <SubType>
       </SubType>
@@ -122,6 +123,7 @@
   <ItemGroup>
     <ClInclude Include="Data.h" />
     <ClInclude Include="Guzik.h" />
+    <ClInclude Include="Interfejs.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
