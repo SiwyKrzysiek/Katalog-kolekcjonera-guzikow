@@ -17,11 +17,13 @@ void push_back(struct Vector *vector, struct Guzik guzik)
 {
     if (vector->cappcity == vector->size)
     {
+		struct Guzik *tmp = vector->tab;
         vector->cappcity *= 2;
         vector->tab = (struct Guzik*) realloc(vector->tab, vector->cappcity * sizeof(struct Guzik));
 		if (vector->tab == NULL)
 		{
 			puts("Blad alokacji pamieci");
+			free(tmp);
 			exit(1);
 		}
     }
@@ -35,12 +37,13 @@ void delete(struct Vector *vector, int index)
     vector->size--;
 }
 
-
 void wypisz(struct Vector *vector)
 {
 	char bufor[100];
 	char nagluwek[] = "ID   Nazwa                Rozmiar   Material   Cena      Data zakupu   Rok produkcji";
 
-	puts("WIP");
-	exit(1);
+	for (int i = 0; i < vector->size; i++)
+	{
+		printf("%4d %s\n", i + 1, guzikToString(bufor, vector->tab[i]));
+	}
 }
