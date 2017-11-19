@@ -1,6 +1,9 @@
 #ifndef SORTOWANIE
 #define SORTOWANIE
 
+#include "Guzik.h"
+#include <string.h>
+
 enum TypSortowania
 {
 	nazwa,
@@ -11,8 +14,10 @@ enum TypSortowania
 	rokProdukcji
 };
 
-int comparName(const void* p1, const void* p2);
-int comparSize(const void* p1, const void* p2);
+int comparNameI(const void* p1, const void* p2);
+int comparNameD(const void* p1, const void* p2);
+int comparSizeD(const void* p1, const void* p2);
+int comparSizeI(const void* p1, const void* p2);
 
 #endif /* SORTOWANIE */
 

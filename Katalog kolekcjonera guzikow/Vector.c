@@ -1,6 +1,4 @@
 #include "Vector.h"
-#include "Sortowanie.h"
-#include <stdlib.h>
 
 void zainicjalizuj(struct Vector *vector)
 {
@@ -69,15 +67,21 @@ void wypisz(struct Vector *vector)
 	putchar('\n');
 }
 
-void sort(struct Vector *vector, enum TypSortowania typSortowania)
+void sort(struct Vector *vector, enum TypSortowania typSortowania, bool rosnaco)
 {
 	switch (typSortowania)
 	{
 	case nazwa:
-		qsort(vector->tab, vector->size, sizeof(struct Guzik), comparName);
+		if (rosnaco)
+			qsort(vector->tab, vector->size, sizeof(struct Guzik), comparNameI);
+		else
+			qsort(vector->tab, vector->size, sizeof(struct Guzik), comparNameD);
 		break;
 	case rozmiar:
-		qsort(vector->tab, vector->size, sizeof(struct Guzik), comparSize);
+		if (rosnaco)
+			qsort(vector->tab, vector->size, sizeof(struct Guzik), comparSizeI);
+		else
+			qsort(vector->tab, vector->size, sizeof(struct Guzik), comparSizeD);
 		break;
 	case material:
 		break;

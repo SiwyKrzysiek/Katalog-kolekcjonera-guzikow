@@ -4,7 +4,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 #include "Guzik.h"
+#include "Sortowanie.h"
 
 struct Vector
 {
@@ -19,6 +21,6 @@ void delete(struct Vector *vector, int index);
 void clear(struct Vector *vector);
 void wypisz(struct Vector *vector);
 void cleanupAtExit(struct Vector *vector);
-void sort(struct Vector *vector, enum TypSortowania typSortowania);
+void sort(struct Vector *vector, enum TypSortowania typSortowania, bool rosnaco);
 
 #endif /* VECTOR */

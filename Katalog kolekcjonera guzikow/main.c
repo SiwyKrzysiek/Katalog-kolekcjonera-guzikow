@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "Data.h"
 #include "Guzik.h"
 #include "Vector.h"
@@ -21,10 +22,13 @@ int main()
 
 	wypisz(&tab);
 
-	sort(&tab, nazwa);
+	sort(&tab, rozmiar, true);
 
 	wypisz(&tab);
 
+	sort(&tab, rozmiar, false);
+
+	wypisz(&tab);
 	
 
 	
