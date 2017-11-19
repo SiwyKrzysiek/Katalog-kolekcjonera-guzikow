@@ -74,6 +74,7 @@ void sort(struct Vector *vector, enum TypSortowania typSortowania)
 	switch (typSortowania)
 	{
 	case nazwa:
+		qsort(vector->tab, vector->size, sizeof(struct Guzik), comparName);
 		break;
 	case rozmiar:
 		qsort(vector->tab, vector->size, sizeof(struct Guzik), comparSize);

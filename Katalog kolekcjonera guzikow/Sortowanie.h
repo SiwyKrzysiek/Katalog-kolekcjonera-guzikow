@@ -11,7 +11,8 @@ enum TypSortowania
 	rokProdukcji
 };
 
-int comparSize(const void* a, const void* b);
+int comparName(const void* p1, const void* p2);
+int comparSize(const void* p1, const void* p2);
 
 #endif /* SORTOWANIE */
 
