@@ -5,6 +5,8 @@ int comparSizeD(const void* p1, const void* p2)
 	if (((struct Guzik*)p1)->rozmiar > ((struct Guzik*)p2)->rozmiar) return -1;
 	if (((struct Guzik*)p1)->rozmiar == ((struct Guzik*)p2)->rozmiar) return 0;
 	if (((struct Guzik*)p1)->rozmiar < ((struct Guzik*)p2)->rozmiar) return 1;
+
+	return 0;
 }
 
 int comparSizeI(const void* p1, const void* p2)
@@ -12,6 +14,8 @@ int comparSizeI(const void* p1, const void* p2)
 	if (((struct Guzik*)p1)->rozmiar < ((struct Guzik*)p2)->rozmiar) return -1;
 	if (((struct Guzik*)p1)->rozmiar == ((struct Guzik*)p2)->rozmiar) return 0;
 	if (((struct Guzik*)p1)->rozmiar > ((struct Guzik*)p2)->rozmiar) return 1;
+
+	return 0;
 }
 
 int comparNameI(const void* p1, const void* p2)

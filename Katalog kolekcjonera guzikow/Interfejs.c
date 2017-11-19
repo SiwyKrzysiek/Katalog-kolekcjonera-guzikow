@@ -1,7 +1,4 @@
 #include "Interfejs.h"
-#include "Guzik.h"
-#include <stdio.h>
-#include <string.h>
 
 char *wczytaj(char  *z, int  ile)
 {
