@@ -29,7 +29,7 @@ char *guzikToString(char nazwa[75], struct Guzik guzik)
 	sprintf(cena, "%.2fzl", guzik.cena);
 	sprintf(wielkosc, "%2d mm", guzik.rozmiar);
 	//30 10 11 9 14 4 = 75
-	sprintf(nazwa, "%-20s %-9s %-10s %-8s %-14s %d", guzik.nazwa, wielkosc, materialToString(guzik.material), cena, dataToString(data, guzik.data), guzik.rokProdukcji);
+	sprintf(nazwa, "%-20s %-9s %-10s %-9s %-13s %d", guzik.nazwa, wielkosc, materialToString(guzik.material), cena, dataToString(data, guzik.data), guzik.rokProdukcji);
 
 	return nazwa;
 }

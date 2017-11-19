@@ -1,4 +1,6 @@
 #include "Vector.h"
+#include "Sortowanie.h"
+#include <stdlib.h>
 
 void zainicjalizuj(struct Vector *vector)
 {
@@ -65,4 +67,26 @@ void wypisz(struct Vector *vector)
 		printf("%-4d %s\n", i + 1, guzikToString(bufor, vector->tab[i]));
 	}
 	putchar('\n');
+}
+
+void sort(struct Vector *vector, enum TypSortowania typSortowania)
+{
+	switch (typSortowania)
+	{
+	case nazwa:
+		break;
+	case rozmiar:
+		qsort(vector->tab, vector->size, sizeof(struct Guzik), comparSize);
+		break;
+	case material:
+		break;
+	case cena:
+		break;
+	case dataZakupu:
+		break;
+	case rokProdukcji:
+		break;
+	default:
+		break;
+	}
 }

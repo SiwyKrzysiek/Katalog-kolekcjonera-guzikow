@@ -19,5 +19,6 @@ void delete(struct Vector *vector, int index);
 void clear(struct Vector *vector);
 void wypisz(struct Vector *vector);
 void cleanupAtExit(struct Vector *vector);
+void sort(struct Vector *vector, enum TypSortowania typSortowania);
 
 #endif /* VECTOR */
