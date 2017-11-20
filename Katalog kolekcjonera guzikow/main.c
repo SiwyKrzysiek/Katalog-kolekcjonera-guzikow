@@ -6,40 +6,25 @@
 #include "Vector.h"
 #include "Sortowanie.h"
 #include "Pliki.h"
+#include "Interfejs.h"
 
 #pragma warning(disable:4996)
 
 int main()
 {
-//    struct Guzik a = {"Tomek", 15, zlto, 20, {4,11,2017}, 2010}, b = { "Staszek", 2, drewno, 25,{ 4,11,2016 }, 2009 }
-//    , j = { "Jagodka", 20, srebro, 50.32,{ 19,3,1999 }, 2016 }, c = { "Bartek", 17, skora, 6.99,{ 30,2,2000 }, 2010 };
+////    struct Guzik a = {"Tomek", 15, zlto, 20, {4,11,2017}, 2010}, b = { "Staszek", 2, drewno, 25,{ 4,11,2016 }, 2009 }
+////    , j = { "Jagodka", 20, srebro, 50.32,{ 19,3,1999 }, 2016 }, c = { "Bartek", 17, skora, 6.99,{ 30,2,2000 }, 2010 };
     struct Vector tab;
-//    zainicjalizuj(&tab);
-//    push_back(&tab, a);
-//    push_back(&tab, b);
-//    push_back(&tab, j);
-//    push_back(&tab, c);
-
-//    wypisz(&tab);
-
-//    enum TypSortowania kryterium = rokProdukcji;
+    zainicjalizuj(&tab);
+////    push_back(&tab, a);
+////    push_back(&tab, b);
+////    push_back(&tab, j);
+////    push_back(&tab, c);
 //
-//    sort(&tab, kryterium, true);
-//
-//    wypisz(&tab);
-//
-//    sort(&tab, kryterium, false);
-//
-//    wypisz(&tab);
     
-    FILE *plik;
-    plik = fopen("baza.txt", "r");
+    char bufor[50];
+    printf("%lu\n", sizeof(bufor));
     
-    wczytajZPliku(&tab, plik);
-    
-    wypisz(&tab);
-    
-	
     cleanupAtExit(&tab);
 	return 0;
 }

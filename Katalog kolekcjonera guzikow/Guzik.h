@@ -7,13 +7,13 @@
 
 enum Material
 {
-	zlto,
-	srebro,
-	miedz,
-	drewno,
-	szklo,
-	skora,
-	modelina
+    drewno,
+    miedz,
+    modelina,
+    skora,
+    srebro,
+    szklo,
+    zlto
 };
 
 struct Guzik
