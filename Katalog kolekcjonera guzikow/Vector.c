@@ -37,7 +37,7 @@ void delete(struct Vector *vector, int index)
     vector->size--;
 }
 
-void clear(struct Vector *vector)
+void empty(struct Vector *vector)
 {
 	free(vector->tab);
 	zainicjalizuj(vector);

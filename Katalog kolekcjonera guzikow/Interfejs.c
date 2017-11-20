@@ -20,8 +20,8 @@ char *wczytaj(char  *z, int  ile)
 
 void wczytajGuzik(struct Vector *vector)
 {
-	struct Guzik nowy;
+	//struct Guzik nowy;
 
 	puts("WIP");
-	exit(1);
+	//exit(1);
 }
