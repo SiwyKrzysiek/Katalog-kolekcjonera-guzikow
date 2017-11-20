@@ -96,8 +96,16 @@ void sort(struct Vector *vector, enum TypSortowania typSortowania, bool rosnaco)
                 qsort(vector->tab, vector->size, sizeof(struct Guzik), comparPriceD);
             break;
         case dataZakupu:
+            if (rosnaco)
+                qsort(vector->tab, vector->size, sizeof(struct Guzik), comparDateI);
+            else
+                qsort(vector->tab, vector->size, sizeof(struct Guzik), comparDateD);
             break;
         case rokProdukcji:
+            if (rosnaco)
+                qsort(vector->tab, vector->size, sizeof(struct Guzik), comparProductionYearI);
+            else
+                qsort(vector->tab, vector->size, sizeof(struct Guzik), comparProductionYearD);
             break;
         default:
             break;

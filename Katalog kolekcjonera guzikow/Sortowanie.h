@@ -3,6 +3,7 @@
 
 #include <string.h>
 #include "Guzik.h"
+#include "Data.h"
 
 enum TypSortowania
 {
@@ -22,7 +23,10 @@ int comparMeterialI(const void* p1, const void* p2);
 int comparMeterialD(const void* p1, const void* p2);
 int comparPriceI(const void* p1, const void* p2);
 int comparPriceD(const void* p1, const void* p2);
-
+int comparDateI(const void* p1, const void* p2);
+int comparDateD(const void* p1, const void* p2);
+int comparProductionYearI(const void* p1, const void* p2);
+int comparProductionYearD(const void* p1, const void* p2);
 
 #endif /* SORTOWANIE */
 

@@ -22,7 +22,7 @@ int main()
 
 	wypisz(&tab);
     
-    enum TypSortowania kryterium = rozmiar;
+    enum TypSortowania kryterium = rokProdukcji;
 
 	sort(&tab, kryterium, true);
 
