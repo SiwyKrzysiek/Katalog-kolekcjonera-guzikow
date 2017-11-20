@@ -69,29 +69,37 @@ void wypisz(struct Vector *vector)
 
 void sort(struct Vector *vector, enum TypSortowania typSortowania, bool rosnaco)
 {
-	switch (typSortowania)
-	{
-	case nazwa:
-		if (rosnaco)
-			qsort(vector->tab, vector->size, sizeof(struct Guzik), comparNameI);
-		else
-			qsort(vector->tab, vector->size, sizeof(struct Guzik), comparNameD);
-		break;
-	case rozmiar:
-		if (rosnaco)
-			qsort(vector->tab, vector->size, sizeof(struct Guzik), comparSizeI);
-		else
-			qsort(vector->tab, vector->size, sizeof(struct Guzik), comparSizeD);
-		break;
-	case material:
-		break;
-	case cena:
-		break;
-	case dataZakupu:
-		break;
-	case rokProdukcji:
-		break;
-	default:
-		break;
-	}
+    switch (typSortowania)
+    {
+        case nazwa:
+            if (rosnaco)
+                qsort(vector->tab, vector->size, sizeof(struct Guzik), comparNameI);
+            else
+                qsort(vector->tab, vector->size, sizeof(struct Guzik), comparNameD);
+            break;
+        case rozmiar:
+            if (rosnaco)
+                qsort(vector->tab, vector->size, sizeof(struct Guzik), comparSizeI);
+            else
+                qsort(vector->tab, vector->size, sizeof(struct Guzik), comparSizeD);
+            break;
+        case material:
+            if (rosnaco)
+                qsort(vector->tab, vector->size, sizeof(struct Guzik), comparMeterialI);
+            else
+                qsort(vector->tab, vector->size, sizeof(struct Guzik), comparMeterialD);
+            break;
+        case cena:
+            if (rosnaco)
+                qsort(vector->tab, vector->size, sizeof(struct Guzik), comparPriceI);
+            else
+                qsort(vector->tab, vector->size, sizeof(struct Guzik), comparPriceD);
+            break;
+        case dataZakupu:
+            break;
+        case rokProdukcji:
+            break;
+        default:
+            break;
+    }
 }

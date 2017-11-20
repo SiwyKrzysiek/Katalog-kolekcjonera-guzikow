@@ -21,12 +21,14 @@ int main()
 	push_back(&tab, c);
 
 	wypisz(&tab);
+    
+    enum TypSortowania kryterium = rozmiar;
 
-	sort(&tab, rozmiar, true);
+	sort(&tab, kryterium, true);
 
 	wypisz(&tab);
 
-	sort(&tab, rozmiar, false);
+	sort(&tab, kryterium, false);
 
 	wypisz(&tab);
 	
