@@ -5,35 +5,41 @@
 #include "Guzik.h"
 #include "Vector.h"
 #include "Sortowanie.h"
+#include "Pliki.h"
 
 #pragma warning(disable:4996)
 
 int main()
 {
-    //char nazwa[20] = "Tomek";
-    struct Guzik a = {"Tomek", 15, zlto, 20, {4,11,2017}, 2010}, b = { "Staszek", 2, drewno, 25,{ 4,11,2016 }, 2009 }
-	, j = { "Jagodka", 20, srebro, 50.32,{ 19,3,1999 }, 2016 }, c = { "Bartek", 17, skora, 6.99,{ 30,2,2000 }, 2010 };
+//    struct Guzik a = {"Tomek", 15, zlto, 20, {4,11,2017}, 2010}, b = { "Staszek", 2, drewno, 25,{ 4,11,2016 }, 2009 }
+//    , j = { "Jagodka", 20, srebro, 50.32,{ 19,3,1999 }, 2016 }, c = { "Bartek", 17, skora, 6.99,{ 30,2,2000 }, 2010 };
     struct Vector tab;
-    zainicjalizuj(&tab);
-	push_back(&tab, a);
-	push_back(&tab, b);
-	push_back(&tab, j);
-	push_back(&tab, c);
+//    zainicjalizuj(&tab);
+//    push_back(&tab, a);
+//    push_back(&tab, b);
+//    push_back(&tab, j);
+//    push_back(&tab, c);
 
-	wypisz(&tab);
+//    wypisz(&tab);
+
+//    enum TypSortowania kryterium = rokProdukcji;
+//
+//    sort(&tab, kryterium, true);
+//
+//    wypisz(&tab);
+//
+//    sort(&tab, kryterium, false);
+//
+//    wypisz(&tab);
     
-    enum TypSortowania kryterium = rokProdukcji;
-
-	sort(&tab, kryterium, true);
-
-	wypisz(&tab);
-
-	sort(&tab, kryterium, false);
-
-	wypisz(&tab);
+    FILE *plik;
+    plik = fopen("baza.txt", "r");
+    
+    wczytajZPliku(&tab, plik);
+    
+    wypisz(&tab);
+    
 	
-
-	
-	cleanupAtExit(&tab);
+    cleanupAtExit(&tab);
 	return 0;
 }

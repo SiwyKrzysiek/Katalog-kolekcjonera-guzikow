@@ -33,3 +33,23 @@ char *guzikToString(char nazwa[75], struct Guzik guzik)
 
 	return nazwa;
 }
+
+enum Material stringToMaterial(char materialS[15])
+{
+    if (!strcmp(materialS, "zloto"))
+        return zlto;
+    if (!strcmp(materialS, "srebro"))
+        return srebro;
+    if (!strcmp(materialS, "miedz"))
+        return miedz;
+    if (!strcmp(materialS, "drewno"))
+        return drewno;
+    if (!strcmp(materialS, "szklo"))
+        return szklo;
+    if (!strcmp(materialS, "skora"))
+        return skora;
+    if (!strcmp(materialS, "modelina"))
+        return modelina;
+    
+    return -1;
+}

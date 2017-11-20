@@ -1,8 +1,9 @@
 #ifndef GUZIK
 #define GUZIK
 
-#include "Data.h"
 #include <stdio.h>
+#include <string.h>
+#include "Data.h"
 
 enum Material
 {
@@ -27,5 +28,6 @@ struct Guzik
 
 const char *materialToString(enum Material material);
 char *guzikToString(char nazwa[], struct Guzik guzik);
+enum Material stringToMaterial(char materialS[15]);
 
 #endif /* GUZIK */
