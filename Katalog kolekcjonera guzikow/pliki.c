@@ -1,17 +1,23 @@
 #include "Pliki.h"
 
-void zapiszDoPliku(struct Vector* vector, FILE* plik)
+void zapiszDoPliku(struct Vector* vector, char nazwaPliku[])
 {
+	FILE *plik = fopen(nazwaPliku, "w");
+
     for (int i=0; i<vector->size; i++) 
     {
         char bufor[80];
         fputs(guzikToString(bufor, vector->tab[i]), plik);
         fputc('\n', plik);
     }
+
+	fclose(plik);
 }
 
-void wczytajZPliku(struct Vector* vector, FILE* plik)
+void wczytajZPliku(struct Vector* vector, char nazwaPliku[])
 {
+	FILE *plik = fopen(nazwaPliku, "r");
+
     struct Guzik guzik;
     char material[15];
     
@@ -22,4 +28,6 @@ void wczytajZPliku(struct Vector* vector, FILE* plik)
         
         push_back(vector, guzik);
     }
+
+	fclose(plik);
 }

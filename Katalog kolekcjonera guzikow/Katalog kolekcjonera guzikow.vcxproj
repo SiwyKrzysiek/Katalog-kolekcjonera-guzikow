@@ -118,6 +118,7 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="pliki.c" />
     <ClCompile Include="Sortowanie.c" />
     <ClCompile Include="Vector.c" />
   </ItemGroup>
@@ -125,8 +126,12 @@
     <ClInclude Include="Data.h" />
     <ClInclude Include="Guzik.h" />
     <ClInclude Include="Interfejs.h" />
+    <ClInclude Include="pliki.h" />
     <ClInclude Include="Sortowanie.h" />
     <ClInclude Include="Vector.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="baza.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

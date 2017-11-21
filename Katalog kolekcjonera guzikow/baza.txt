@@ -1,0 +1,4 @@
+Tomek                15 mm     zloto      20.00zl   04-11-2017    2010
+Staszek               2 mm     drewno     25.00zl   04-11-2016    2009
+Jagodka              20 mm     srebro     50.32zl   19-03-1999    2016
+Bartek               17 mm     skora      6.99zl    30-02-2000    2010

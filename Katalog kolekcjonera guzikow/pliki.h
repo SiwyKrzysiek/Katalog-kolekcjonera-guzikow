@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include "Vector.h"
 
-void zapiszDoPliku(struct Vector* vector, FILE* plik);
-void wczytajZPliku(struct Vector* vector, FILE* plik);
+void zapiszDoPliku(struct Vector* vector, char nazwaPliku[]);
+void wczytajZPliku(struct Vector* vector, char nazwaPliku[]);
 
 #endif /* pliki_h */
