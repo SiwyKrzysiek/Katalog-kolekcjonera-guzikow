@@ -1,3 +1,4 @@
+//Program na PRI - dynamiczna baza danych
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -7,11 +8,14 @@
 #include "Sortowanie.h"
 #include "pliki.h"
 #include "Interfejs.h"
+#include "Testy.h"
 
 #pragma warning(disable:4996)
 
 int main()
 {
+    puts("Krzysztof Dabrowski gr. 1I1\nProjekt Katalog kolekcjonera guzikow\n-----------------------------------------------------\n");
+    
     struct Vector tab;
     zainicjalizuj(&tab);
     //struct Guzik a = {"Tomek", 15, zlto, 20, {4,11,2017}, 2010}, b = { "Staszek", 2, drewno, 25,{ 4,11,2016 }, 2009 }
@@ -21,10 +25,11 @@ int main()
     //push_back(&tab, j);
     //push_back(&tab, c);
 
-	wczytajZPliku(&tab, "baza.txt");
+	//wczytajZPliku(&tab, "baza.txt");
 	
-	wypisz(&tab);
-
+	//wypisz(&tab);
+    
+    
     
     cleanupAtExit(&tab);
 	return 0;

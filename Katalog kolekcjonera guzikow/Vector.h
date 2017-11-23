@@ -15,12 +15,12 @@ struct Vector
 	int cappcity;
 };
 
-void zainicjalizuj(struct Vector *vector);
-void push_back(struct Vector *vector, struct Guzik guzik);
-void delete(struct Vector *vector, int index);
-void empty(struct Vector *vector);
-void wypisz(struct Vector *vector);
-void cleanupAtExit(struct Vector *vector);
-void sort(struct Vector *vector, enum TypSortowania typSortowania, bool rosnaco);
+void zainicjalizuj(struct Vector *vector); //Przygotowanie vectora do pracy
+void push_back(struct Vector *vector, struct Guzik guzik); //Dodatne elementy na koniec
+void delete(struct Vector *vector, int index); //Usuniecie wybranego elementu
+void empty(struct Vector *vector); //Wyczyszczenie vectora
+void wypisz(struct Vector *vector); //Wypisanie zawartosci vectora
+void cleanupAtExit(struct Vector *vector); //Zwolnienie calej pamieci
+void sort(struct Vector *vector, enum TypSortowania typSortowania, bool rosnaco); //Posortowanie zawartosci vectora wedlug daniego kryterium
 
 #endif /* VECTOR */
