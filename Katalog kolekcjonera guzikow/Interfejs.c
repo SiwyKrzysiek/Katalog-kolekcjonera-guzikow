@@ -18,10 +18,41 @@ char *wczytaj(char  *z, int  ile)
 	return  wynik;
 }
 
-void wczytajGuzik(struct Vector *vector)
+void czyscBufor()
 {
-	//struct Guzik nowy;
+	while (getchar() != '\n');
+}
+
+struct Guzik wczytajGuzik()
+{
+	struct Guzik nowy;
+	bool ponow;
+	puts("Podaj nazwe guzika");
+	wczytaj(nowy.nazwa, 20);
+	do
+	{
+		ponow = false;
+		puts("Podaj rozmiar guzika w mm");
+		if (scanf("%u", &nowy.rozmiar) != 1 || nowy.rozmiar<=0)
+		{
+			ponow = true;
+			puts("Bledny rozmiar");
+			czyscBufor();
+		}
+	} while (ponow);
+	do
+	{
+		ponow = false;
+		puts("Podaj wybierz material guzika");
+		puts("1 - drewno\n2 - miedz\n3 - modelina\n4 - skora\n5 - srebro\n6 - szklo\n7 - zlto");
+		
+		/////////////////////////////////////////////
+
+	} while (ponow);
+	
 
 	puts("WIP");
+
+	return nowy;
 	//exit(1);
 }

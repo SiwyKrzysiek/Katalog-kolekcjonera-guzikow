@@ -29,7 +29,7 @@ int main()
 	
 	//wypisz(&tab);
     
-    
+	wczytajGuzik();
     
     cleanupAtExit(&tab);
 	return 0;

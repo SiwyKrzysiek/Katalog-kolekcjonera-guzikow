@@ -120,6 +120,7 @@
     </ClCompile>
     <ClCompile Include="pliki.c" />
     <ClCompile Include="Sortowanie.c" />
+    <ClCompile Include="Testy.c" />
     <ClCompile Include="Vector.c" />
   </ItemGroup>
   <ItemGroup>
@@ -128,6 +129,7 @@
     <ClInclude Include="Interfejs.h" />
     <ClInclude Include="pliki.h" />
     <ClInclude Include="Sortowanie.h" />
+    <ClInclude Include="Testy.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>
   <ItemGroup>
