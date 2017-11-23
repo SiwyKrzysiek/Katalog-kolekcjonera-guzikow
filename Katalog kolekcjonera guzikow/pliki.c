@@ -1,4 +1,4 @@
-#include "Pliki.h"
+#include "pliki.h"
 
 void zapiszDoPliku(struct Vector* vector, char nazwaPliku[])
 {

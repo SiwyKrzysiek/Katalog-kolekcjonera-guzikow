@@ -5,7 +5,7 @@
 #include "Guzik.h"
 #include "Vector.h"
 #include "Sortowanie.h"
-#include "Pliki.h"
+#include "pliki.h"
 #include "Interfejs.h"
 
 #pragma warning(disable:4996)
