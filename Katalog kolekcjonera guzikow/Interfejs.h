@@ -12,6 +12,6 @@ char *wczytaj(char  *z, int  ile);
 void czyscBufor(void);
 struct Guzik wczytajGuzik(void);
 struct Data wczytajDate(void);
-
+void wyswietlGlowneMenu();
 
 #endif /* INTERFEJS */

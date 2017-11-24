@@ -83,13 +83,34 @@ struct Guzik wczytajGuzik()
 		}
 	} while (ponow);
 
+	puts("\nPodaj date dodania do kolekcji:");
+	nowy.data = wczytajDate();
+
+	do
+	{
+		ponow = false;
+		puts("\nPodaj rok produkcji guzika");
+
+		int decyzja;
+		if (scanf("%d", &decyzja) != 1 || decyzja <= 1800 || decyzja > 2100)
+		{
+			ponow = true;
+			puts("Bledyny rok produkcji");
+			czyscBufor();
+		}
+		else
+		{
+			nowy.rokProdukcji = decyzja;
+			czyscBufor();
+		}
+	} while (ponow);
+
 	return nowy;
 }
 
 struct Data wczytajDate()
 {
 	struct Data nowa;
-	puts("Wczytywanie daty");
 
 	bool ponow;
 	do
@@ -135,4 +156,17 @@ struct Data wczytajDate()
 	} while (ponow);
 
 	return nowa;
+}
+
+void wyswietlGlowneMenu()
+{
+	puts("Wybierz co chcesz zrobic:\n"
+		"1 - Wyswietl baze guzikow\n"
+		"2 - Edytuj zawartosc bazy\n"
+		"3 - Sortuj baze\n"
+		"4 - Wczytaj baze z pliku\n"
+		"5 - Zapisz baze do pliku\n"
+		"6 - Wyczysc baze\n"
+		"q - Zamknij program"
+	);
 }
