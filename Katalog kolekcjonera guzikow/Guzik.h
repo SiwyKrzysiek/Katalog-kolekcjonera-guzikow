@@ -5,6 +5,8 @@
 #include <string.h>
 #include "Data.h"
 
+#define LICZBA_MATERIALOW 7
+
 enum Material
 {
     drewno,

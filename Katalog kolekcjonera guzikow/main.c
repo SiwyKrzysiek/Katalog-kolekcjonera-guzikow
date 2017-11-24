@@ -29,7 +29,7 @@ int main()
 	
 	//wypisz(&tab);
     
-	wczytajGuzik();
+	struct Guzik test = wczytajGuzik();
     
     cleanupAtExit(&tab);
 	return 0;
