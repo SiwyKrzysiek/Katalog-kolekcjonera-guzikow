@@ -45,7 +45,8 @@ void empty(struct Vector *vector)
 
 void cleanupAtExit(struct Vector *vector)
 {
-	free(vector->tab);
+	if (vector->tab)
+		free(vector->tab);
 }
 
 void replace(struct Vector *vector, int index, struct Guzik nowy)

@@ -11,22 +11,22 @@
 #include "Testy.h"
 
 #pragma warning(disable:4996)
-#define TEST 1
+#define TEST 0
 
 int main()
 {
     puts("Krzysztof Dabrowski gr. 1I1\nProjekt Katalog kolekcjonera guzikow\n-----------------------------------------------------\n");
     
-    struct Vector tab;
-    zainicjalizuj(&tab);
+    struct Vector bazaDanych;
+    zainicjalizuj(&bazaDanych);
 
 #if TEST
 	struct Guzik a = { "Tomek", 1500, zlto, 5421,{ 4,11,2017 }, 2010 }, b = { "Staszek", 2, drewno, 25,{ 4,11,2016 }, 2009 }
 	, j = { "Jagodka", 20, srebro, 50.32,{ 19,3,1999 }, 2016 }, c = { "Bartek", 17, skora, 6.99,{ 30,2,2000 }, 2010 };
-	push_back(&tab, a);
-	push_back(&tab, b);
-	push_back(&tab, j);
-	push_back(&tab, c);
+	push_back(&bazaDanych, a);
+	push_back(&bazaDanych, b);
+	push_back(&bazaDanych, j);
+	push_back(&bazaDanych, c);
 #endif // TEST
 
 	bool ponow;
@@ -45,22 +45,22 @@ int main()
 		switch (decyzja)
 		{
 		case '1':
-			wypisz(&tab);
+			wypisz(&bazaDanych);
 			break;
 		case '2':
-			menuEdycji(&tab);
+			menuEdycji(&bazaDanych);
 			break;
 		case '3':
-			menuSortowania(&tab);
+			menuSortowania(&bazaDanych);
 			break;
 		case '4':
-			menuWczytajZPliku(&tab);
+			menuWczytajZPliku(&bazaDanych);
 			break;
 		case '5':
-			menuZapisuDoPliku(&tab);
+			menuZapisuDoPliku(&bazaDanych);
 			break;
 		case '6':
-			menueCzyszczenia(&tab);
+			menueCzyszczenia(&bazaDanych);
 			break;
 		case 'q':
 			ponow = false;
@@ -69,10 +69,8 @@ int main()
 			puts("Nierozpoznany znak. Sproboj ponownie\n");
 			break;
 		}
-
-
 	} while (ponow);
     
-    cleanupAtExit(&tab);
+    cleanupAtExit(&bazaDanych);
 	return 0;
 }
