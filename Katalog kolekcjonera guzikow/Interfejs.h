@@ -18,5 +18,6 @@ void menueCzyszczenia(struct Vector* baza);
 void menuEdycji(struct Vector* baza);
 void menuZapisuDoPliku(struct Vector* baza);
 void menuWczytajZPliku(struct Vector* baza);
+void menuSortowania(struct Vector* baza);
 
 #endif /* INTERFEJS */

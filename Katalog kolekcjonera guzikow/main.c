@@ -11,7 +11,7 @@
 #include "Testy.h"
 
 #pragma warning(disable:4996)
-#define TEST 0
+#define TEST 1
 
 int main()
 {
@@ -21,7 +21,7 @@ int main()
     zainicjalizuj(&tab);
 
 #if TEST
-	struct Guzik a = { "Tomek", 15, zlto, 20,{ 4,11,2017 }, 2010 }, b = { "Staszek", 2, drewno, 25,{ 4,11,2016 }, 2009 }
+	struct Guzik a = { "Tomek", 1500, zlto, 5421,{ 4,11,2017 }, 2010 }, b = { "Staszek", 2, drewno, 25,{ 4,11,2016 }, 2009 }
 	, j = { "Jagodka", 20, srebro, 50.32,{ 19,3,1999 }, 2016 }, c = { "Bartek", 17, skora, 6.99,{ 30,2,2000 }, 2010 };
 	push_back(&tab, a);
 	push_back(&tab, b);
@@ -51,7 +51,7 @@ int main()
 			menuEdycji(&tab);
 			break;
 		case '3':
-
+			menuSortowania(&tab);
 			break;
 		case '4':
 			menuWczytajZPliku(&tab);

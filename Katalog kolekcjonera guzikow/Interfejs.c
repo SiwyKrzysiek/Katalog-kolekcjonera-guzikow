@@ -30,11 +30,12 @@ struct Guzik wczytajGuzik()
 	puts("Podaj nazwe guzika");
 	wczytaj(nowy.nazwa, 20);
 
-	do
+	//Wczytanie nazwy
+	do 
 	{
 		ponow = false;
 		puts("\nPodaj rozmiar guzika w mm");
-		if (scanf("%u", &nowy.rozmiar) != 1 || nowy.rozmiar <= 0)
+		if (scanf("%u", &nowy.rozmiar) != 1 || nowy.rozmiar <= 0 || nowy.rozmiar >= 10000)
 		{
 			ponow = true;
 			puts("Bledny rozmiar");
@@ -44,6 +45,7 @@ struct Guzik wczytajGuzik()
 			czyscBufor();
 	} while (ponow);
 
+	//Wczytanie materialu
 	do
 	{
 		ponow = false;
@@ -64,13 +66,14 @@ struct Guzik wczytajGuzik()
 		}
 	} while (ponow);
 
+	//Wczytanie ceny
 	do
 	{
 		ponow = false;
 		puts("\nPodaj cene guzika");
 
 		double decyzja;
-		if (scanf("%lf", &decyzja) != 1 || decyzja <= 0)
+		if (scanf("%lf", &decyzja) != 1 || decyzja <= 0 || decyzja >= 10000)
 		{
 			ponow = true;
 			puts("Bledna cena");
@@ -83,9 +86,11 @@ struct Guzik wczytajGuzik()
 		}
 	} while (ponow);
 
-	puts("\nWprowadz date dodania do kolekcji:");
+	//Wczytanie daty dodania do kolekcji
+	printf("\nWprowadz date dodania do kolekcji:");
 	nowy.data = wczytajDate();
 
+	//Wczytanie roku produkcji
 	do
 	{
 		ponow = false;
@@ -273,4 +278,51 @@ void menuWczytajZPliku(struct Vector* baza)
 	putchar('\n');
 
 	wczytajZPliku(baza, nazwaPliku);
+}
+
+void menuSortowania(struct Vector* baza)
+{
+	char kolumna;
+	puts("Wybierz kolumne po ktorej chcesz sortowac:\n"
+		"1 - nazwa\n"
+		"2 - rozmiar\n"
+		"3 - material\n"
+		"4 - cena\n"
+		"5 - data\n"
+		"6 - rok produkcji"
+	);
+
+	kolumna = getchar();
+	putchar('\n');
+
+	if (kolumna != '\n')
+		czyscBufor();
+
+	if (kolumna < '1' || kolumna > '6')
+	{
+		puts("Nierozpoznany znak\n");
+		return;
+	}
+
+	char kolejnosc;
+	puts("Wybierz kolejnosc sortowania (r/m)");
+
+	kolejnosc = getchar();
+	putchar('\n');
+
+	if (kolejnosc != '\n')
+		czyscBufor();
+
+	switch (kolejnosc)
+	{
+	case 'r':
+		sort(baza, kolumna - '0' - 1, true);
+		break;
+	case 'm':
+		sort(baza, kolumna - '0' - 1, false);
+		break;
+	default:
+		puts("Nierozpoznany znak\n");
+		break;
+	}
 }

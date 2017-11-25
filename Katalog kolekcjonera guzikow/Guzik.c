@@ -25,7 +25,7 @@ const char *materialToString(enum Material material)
 
 char *guzikToString(char nazwa[75], struct Guzik guzik)
 {
-	char cena[10], data[11], wielkosc[8];
+	char cena[11], data[11], wielkosc[8];
 	sprintf(cena, "%.2fzl", guzik.cena);
 	sprintf(wielkosc, "%2d mm", guzik.rozmiar);
 	//30 10 11 9 14 4 = 75
