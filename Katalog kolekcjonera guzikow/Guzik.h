@@ -28,8 +28,8 @@ struct Guzik
 	int rokProdukcji;
 };
 
-const char *materialToString(enum Material material);
-char *guzikToString(char nazwa[75], struct Guzik guzik);
-enum Material stringToMaterial(char materialS[15]);
+const char *materialToString(enum Material material); //Zamienia typ matrial na odpowiadajacy mu ciag znakow
+char *guzikToString(char nazwa[75], struct Guzik guzik); //Zamienia typ Guzik na ciag znakow opisujacy jego cechy
+enum Material stringToMaterial(char materialS[15]); //Zamienai ciag znakow opisujacy material na typ material. W przypadku blednych danych zwraca -1
 
 #endif /* GUZIK */
