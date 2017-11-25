@@ -16,7 +16,7 @@ struct Vector
 };
 
 void zainicjalizuj(struct Vector *vector); //Przygotowanie vectora do pracy
-void push_back(struct Vector *vector, struct Guzik guzik); //Dodatne elementy na koniec
+void push_back(struct Vector *vector, struct Guzik guzik); //Dodanie element na koniec vectora
 void delete(struct Vector *vector, int index); //Usuniecie wybranego elementu
 void empty(struct Vector *vector); //Wyczyszczenie vectora
 void wypisz(struct Vector *vector); //Wypisanie zawartosci vectora

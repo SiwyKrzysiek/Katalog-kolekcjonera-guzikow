@@ -9,7 +9,7 @@
 #include "Data.h"
 #include "pliki.h"
 
-char *wczytaj(char  *z, int  ile); //Wczytuje dana liczbe znakow lub do konca lini a potem czysci bufor
+char *wczytaj(char  *z, int  ile); //Wczytuje dana liczbe znakow lub do konca linii a potem czysci bufor
 void czyscBufor(void); //Czysci bufor wejsciowy
 struct Guzik wczytajGuzik(void); //Wczytuje guzik ze standardowego wejscia
 struct Data wczytajDate(void); //Wczytuje date ze standardowego wejscia
