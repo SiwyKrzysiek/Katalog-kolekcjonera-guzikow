@@ -83,7 +83,7 @@ struct Guzik wczytajGuzik()
 		}
 	} while (ponow);
 
-	puts("\nPodaj date dodania do kolekcji:");
+	puts("\nWprowadz date dodania do kolekcji:");
 	nowy.data = wczytajDate();
 
 	do
@@ -101,6 +101,7 @@ struct Guzik wczytajGuzik()
 		else
 		{
 			nowy.rokProdukcji = decyzja;
+			putchar('\n');
 			czyscBufor();
 		}
 	} while (ponow);
@@ -144,7 +145,7 @@ struct Data wczytajDate()
 	do
 	{
 		ponow = false;
-		puts("Podaj rok");
+		puts("\nPodaj rok");
 		if (scanf("%d", &nowa.rok) != 1 || nowa.rok <= 1900 || nowa.rok>2100)
 		{
 			ponow = true;
@@ -158,7 +159,7 @@ struct Data wczytajDate()
 	return nowa;
 }
 
-void wyswietlGlowneMenu()
+void wyswietlMenuGlowne()
 {
 	puts("Wybierz co chcesz zrobic:\n"
 		"1 - Wyswietl baze guzikow\n"
@@ -169,4 +170,107 @@ void wyswietlGlowneMenu()
 		"6 - Wyczysc baze\n"
 		"q - Zamknij program"
 	);
+}
+
+void menueCzyszczenia(struct Vector* baza)
+{
+	char decyzja;
+
+	puts("Ta operacja usunie wszystkie rekordy z bazy. Czy na pewno? (t/n)");
+	decyzja = getchar();
+	putchar('\n');
+
+	if (decyzja != '\n')
+		czyscBufor();
+	if (decyzja == 't')
+		empty(baza);
+	else if (decyzja != 'n')
+		puts("Nierozpoznany znak\n");
+}
+
+void menuEdycji(struct Vector* baza)
+{
+	char decyzja;
+	bool ponow = true;
+	int id;
+
+	do
+	{
+		puts("Wybierz operacje:\n"
+			"1 - Dodaj rekor\n"
+			"2 - Edytuj rekord\n"
+			"3 - Usun rekord\n"
+			"q - Wroc do glownego menu"
+		);
+		decyzja = getchar();
+		putchar('\n');
+
+		if (decyzja != '\n')
+			czyscBufor();
+
+		switch (decyzja)
+		{
+		case '1':
+			push_back(baza, wczytajGuzik());
+			break;
+		case '2':
+			puts("Podaj ID guzika, ktorego chcesz edytowac");
+			
+			scanf("%d", &id);
+			czyscBufor();
+			putchar('\n');
+			id--;
+			if (id < 0 || id >= baza->size)
+			{
+				puts("Bledne ID\n");
+				break;
+			}
+
+			baza->tab[id] = wczytajGuzik();
+			break;
+		case '3':
+			puts("Podaj ID guzika, ktory chcesz usunac");
+			
+			scanf("%d", &id);
+			czyscBufor();
+			putchar('\n');
+			id--;
+			if (id < 0 || id >= baza->size)
+			{
+				puts("Bledne ID\n");
+				break;
+			}
+
+			delete(baza, id);
+			break;
+		case 'q':
+			ponow = false;
+			break;
+		default:
+			puts("Nierozpoznany znak\n");
+			break;
+		}
+	} while (ponow);
+}
+
+void menuZapisuDoPliku(struct Vector* baza)
+{
+	puts("Podaj nazwe pliku do ktorego chcesz zapisac baze");
+
+	char nazwaPliku[200];
+	wczytaj(nazwaPliku, sizeof(nazwaPliku));
+	putchar('\n');
+
+	zapiszDoPliku(baza, nazwaPliku);
+}
+
+void menuWczytajZPliku(struct Vector* baza)
+{
+	puts("Podaj nazwe pliku z ktorego chcesz wczytac baze");
+
+	char nazwaPliku[200];
+	wczytaj(nazwaPliku, sizeof(nazwaPliku));
+	putchar('\n');
+
+	wczytajZPliku(baza, nazwaPliku);
 }

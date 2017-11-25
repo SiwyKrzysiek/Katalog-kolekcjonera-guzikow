@@ -3,6 +3,11 @@
 void zapiszDoPliku(struct Vector* vector, char nazwaPliku[])
 {
 	FILE *plik = fopen(nazwaPliku, "w");
+	if (!plik)
+	{
+		puts("Nie udalo sie utworzyc pliku\n");
+		return;
+	}
 
     for (int i=0; i<vector->size; i++) 
     {
@@ -14,9 +19,14 @@ void zapiszDoPliku(struct Vector* vector, char nazwaPliku[])
 	fclose(plik);
 }
 
-void wczytajZPliku(struct Vector* vector, char nazwaPliku[])
+void wczytajZPliku(struct Vector* vector, const char nazwaPliku[])
 {
 	FILE *plik = fopen(nazwaPliku, "r");
+	if (!plik)
+	{
+		puts("Nie udalo sie otworzyc pliku\n");
+		return;
+	}
 
     struct Guzik guzik;
     char material[15];

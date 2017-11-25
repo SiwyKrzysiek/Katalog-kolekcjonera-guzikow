@@ -11,7 +11,7 @@
 #include "Testy.h"
 
 #pragma warning(disable:4996)
-#define TEST 1
+#define TEST 0
 
 int main()
 {
@@ -35,7 +35,7 @@ int main()
 		ponow = true;
 		char decyzja;
 
-		wyswietlGlowneMenu();
+		wyswietlMenuGlowne();
 
 		decyzja = getchar();
 		if (decyzja != '\n')
@@ -48,23 +48,19 @@ int main()
 			wypisz(&tab);
 			break;
 		case '2':
+			menuEdycji(&tab);
 			break;
 		case '3':
+
 			break;
 		case '4':
+			menuWczytajZPliku(&tab);
 			break;
 		case '5':
+			menuZapisuDoPliku(&tab);
 			break;
 		case '6':
-			puts("Ta operacja usunie wszystkie rekordy z bazy. Czy na pewno? (t/n)");
-			decyzja = getchar();
-			putchar('\n');
-			if (decyzja != '\n')
-				czyscBufor();
-			if (decyzja == 't')
-				empty(&tab);
-			else if(decyzja != 'n')
-				puts("Nierozpoznany znak\n");
+			menueCzyszczenia(&tab);
 			break;
 		case 'q':
 			ponow = false;
