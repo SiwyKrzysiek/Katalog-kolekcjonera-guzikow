@@ -19,7 +19,7 @@ void zapiszDoPliku(struct Vector* vector, char nazwaPliku[])
 	fclose(plik);
 }
 
-void wczytajZPliku(struct Vector* vector, const char nazwaPliku[])
+void wczytajZPliku(struct Vector* vector, char nazwaPliku[])
 {
 	FILE *plik = fopen(nazwaPliku, "r");
 	if (!plik)

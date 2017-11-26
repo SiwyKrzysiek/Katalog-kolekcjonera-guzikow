@@ -221,7 +221,11 @@ void menuEdycji(struct Vector* baza)
 		case '2':
 			puts("Podaj ID guzika, ktorego chcesz edytowac");
 			
-			scanf("%d", &id);
+			if (scanf("%d", &id) != 1)
+			{
+				puts("Bledne ID\n");
+				break;
+			}
 			czyscBufor();
 			putchar('\n');
 			id--;
@@ -236,7 +240,11 @@ void menuEdycji(struct Vector* baza)
 		case '3':
 			puts("Podaj ID guzika, ktory chcesz usunac");
 			
-			scanf("%d", &id);
+			if (scanf("%d", &id) != 1)
+			{
+				puts("Bledne ID\n");
+				break;
+			}
 			czyscBufor();
 			putchar('\n');
 			id--;
